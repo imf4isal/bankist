@@ -73,3 +73,10 @@ const usdToEuro = movements.map(move => move * usdToEu);
 
 console.log(movements);
 console.log(usdToEuro);
+
+const max = movements.reduce((acc, curr) => {
+  if (acc > curr) return acc;
+  else return curr;
+});
+
+console.log(max);
