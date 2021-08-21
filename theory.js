@@ -80,3 +80,22 @@ const max = movements.reduce((acc, curr) => {
 });
 
 console.log(max);
+
+const calcAverageHumanAge = function (ages) {
+  const convertToHumanAge = ages.map(age => {
+    if (age <= 2) return 2 * age;
+    else return 16 + age * 4;
+  });
+
+  const filterDog = convertToHumanAge.filter(age => age >= 18);
+
+  const averageAge = filterDog.reduce((acc, curr) => acc + curr, 0);
+
+  const averAgee = averageAge / filterDog.length;
+  console.log(convertToHumanAge);
+  console.log(filterDog);
+  console.log(averageAge);
+  console.log(averAgee);
+};
+
+calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
