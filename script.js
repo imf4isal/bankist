@@ -78,5 +78,19 @@ const display = function (movements) {
 };
 
 display(account1.movements);
+
+const createUserName = function (users) {
+  users.forEach(function (user) {
+    user.username = user.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+
+createUserName(accounts);
+
+console.log(accounts);
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
