@@ -8,7 +8,7 @@
 //   ['GBP', 'Pound sterling'],
 // ]);
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 // arrays are objects. we can use method into array.
@@ -60,3 +60,16 @@
 // const kate = [4, 1, 15, 8, 3];
 
 // checkDog(jul, kate);
+
+//map*******************************************************************************
+
+const usdToEu = 1.1;
+
+// const usdToEuro = movements.map(function (move) {
+//   return move * usdToEu;
+// });
+
+const usdToEuro = movements.map(move => move * usdToEu);
+
+console.log(movements);
+console.log(usdToEuro);
