@@ -79,6 +79,14 @@ const display = function (movements) {
 
 display(account1.movements);
 
+const displayCalBalance = function (movements) {
+  const currentValue = movements.reduce((acc, curr) => acc + curr, 0);
+
+  labelBalance.innerText = `${currentValue} EURO`;
+};
+
+displayCalBalance(account1.movements);
+
 const createUserName = function (users) {
   users.forEach(function (user) {
     user.username = user.owner
