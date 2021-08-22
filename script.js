@@ -79,6 +79,28 @@ const display = function (movements) {
 
 display(account1.movements);
 
+const calcDisplaySummary = function (movements) {
+  const sumIn = movements
+    .filter(mov => mov > 0)
+    .reduce((acc, curr) => acc + curr, 0);
+
+  labelSumIn.textContent = `${sumIn}€`;
+
+  const sumOut = movements
+    .filter(mov => mov < 0)
+    .reduce((acc, curr) => acc + curr, 0);
+  labelSumOut.textContent = `${Math.abs(sumOut)}€`;
+
+  const int = movements
+    .filter(mov => mov > 0)
+    .map(deposit => (deposit * 1.2) / 100)
+    .filter(dep => dep >= 1)
+    .reduce((acc, curr) => acc + curr, 0);
+
+  labelSumInterest.textContent = `${int}€`;
+};
+
+calcDisplaySummary(account1.movements);
 const displayCalBalance = function (movements) {
   const currentValue = movements.reduce((acc, curr) => acc + curr, 0);
 
@@ -102,3 +124,4 @@ createUserName(accounts);
 console.log(accounts);
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
+//
