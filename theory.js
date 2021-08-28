@@ -112,3 +112,20 @@ const calcAverageHumanAge = ages => {
   console.log(convertToHumanAge);
 };
 calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+
+// some , every, flat, flatMap
+
+// some - condition meet kore kina , konota
+
+// shb koyta condition meet kore kina- every
+const allMovements = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(allMovements);
+
+const allMovements1 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+
+console.log(allMovements1);
