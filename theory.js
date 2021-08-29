@@ -69,17 +69,17 @@ const usdToEu = 1.1;
 //   return move * usdToEu;
 // });
 
-const usdToEuro = movements.map(move => move * usdToEu);
+// const usdToEuro = movements.map(move => move * usdToEu);
 
-console.log(movements);
-console.log(usdToEuro);
+// console.log(movements);
+// console.log(usdToEuro);
 
-const max = movements.reduce((acc, curr) => {
-  if (acc > curr) return acc;
-  else return curr;
-});
+// const max = movements.reduce((acc, curr) => {
+//   if (acc > curr) return acc;
+//   else return curr;
+// });
 
-console.log(max);
+// console.log(max);
 
 // const calcAverageHumanAge = function (ages) {
 //   const convertToHumanAge = ages.map(age => {
@@ -100,32 +100,63 @@ console.log(max);
 
 // calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
 
-const calcAverageHumanAge = ages => {
-  const convertToHumanAge = ages
-    .map(age => {
-      if (age <= 2) return 2 * age;
-      else return 16 + age * 4;
-    })
-    .filter(age => age >= 18)
-    .reduce((acc, curr, i, arr) => acc + curr / arr.length, 0);
+// const calcAverageHumanAge = ages => {
+//   const convertToHumanAge = ages
+//     .map(age => {
+//       if (age <= 2) return 2 * age;
+//       else return 16 + age * 4;
+//     })
+//     .filter(age => age >= 18)
+//     .reduce((acc, curr, i, arr) => acc + curr / arr.length, 0);
 
-  console.log(convertToHumanAge);
-};
-calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
+//   console.log(convertToHumanAge);
+// };
+// calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
 
 // some , every, flat, flatMap
 
 // some - condition meet kore kina , konota
 
 // shb koyta condition meet kore kina- every
-const allMovements = accounts
-  .map(acc => acc.movements)
-  .flat()
-  .reduce((acc, mov) => acc + mov, 0);
-console.log(allMovements);
+// const allMovements = accounts
+//   .map(acc => acc.movements)
+//   .flat()
+//   .reduce((acc, mov) => acc + mov, 0);
+// console.log(allMovements);
 
-const allMovements1 = accounts
-  .flatMap(acc => acc.movements)
-  .reduce((acc, mov) => acc + mov, 0);
+// const allMovements1 = accounts
+//   .flatMap(acc => acc.movements)
+//   .reduce((acc, mov) => acc + mov, 0);
 
-console.log(allMovements1);
+// console.log(allMovements1);
+
+const arr = [1, 2, 3, 4, 5, 6, 7];
+
+const x = new Array(1, 2, 3, 4, 5);
+const y = new Array(7);
+console.log(x);
+
+console.log(y);
+
+y.fill(1, 3); // fill from position 3
+
+console.log(y);
+
+arr.fill(1, 4);
+
+console.log(arr); // mutated arr array
+
+const z = Array.from({ length: 7 }, () => 1); // last arrow function behave like map method, Array object theke from method call kortese
+
+console.log(z);
+
+const c = Array.from({ length: 7 }, (_, i) => i + 1); // last arrow function behave like map method, Array object theke from method call kortese
+
+console.log(c);
+
+labelBalance.addEventListener('click', function () {
+  const movementsUI = document.querySelectorAll('.movements__value');
+
+  console.log(movementsUI);
+});
+// const movs = document.querySelectorAll();
